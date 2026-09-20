@@ -1,0 +1,5 @@
+# Holmes CTF 2026 — Sherlock 01 "Silent Dividend"
+
+## 1. TL;DR
+
+A malicious Electron application distributed as a Windows NSIS installer ("TrustSettle 1.0.0.exe") targets cryptocurrency wallet holders through a three-pronged attack. First, a LuaJIT FFI backdoor silently monitors `C:\Users\Public\.env` for private key material and exfiltrates it via WinHTTP. Second, a phishing HTML page styled as a Terms of Service agreement tricks the victim into calling `approve(attacker, MaxUint256)` on a fake token contract, granting the attacker unlimited spending authority over their wallet. Third, the Electron preload script fetches a decryption key from an on-chain smart contract (`resolveState()`), decrypts an embedded payload, and executes it — the plaintext being a shell command that both launches the phishing page and leaks the campaign credentials. The final flag is recovered by computing the hidden owner address of a second on-chain contract (`x2 XOR x3`), then calling its view function `x9()` with that address, which streams a keccak256-keyed ciphertext and returns the coordinates `51.5049,0.0348`.
