@@ -13,6 +13,7 @@ This repository contains the complete English write-ups and reproducible solver 
 | **Sherlock 04** | **PaperGhost** | USB Device Artifacts, SRUM/ESE Analysis, Windows Search Index Recovery | 9/9 flags answered | [Write-up](PaperGhost/README.md) | Not Applicable |
 | **Sherlock 05** | **PoisonedBranch** | Software Supply Chain, Linux Auditd, bkcrack Known-Plaintext | `HTB{P0150N3D_BR4NCH_N3V3R_D135}` | [Write-up](PoisonedBranch/README.md) | [`solve.py`](PoisonedBranch/solve.py) |
 | **Sherlock 06** | **SilentPassenger** | Android Automotive Forensics, MQTT, Reverse Engineering | 20/20 questions answered | [Write-up](SilentPassenger/README.md) | [`solve.py`](SilentPassenger/solve.py) |
+| **Sherlock 07** | **Iron Feather** | PX4 Firmware Reversing, Custom KDF/AES-GCM Cryptography, ULog Flight-Log Forensics, GPS/Geospatial Analysis | 17/17 flags answered | [Write-up](IronFeather/README.md) | [`solve.py`](IronFeather/solve.py) |
 | **Sherlock 09** | **LastLight / DIOGENES** | Active Directory Live Response, Memory Forensics, RBCD | `HTB{3v3n_Th3_F0g_Kn0ws_D10g3n3s}` | [Write-up](LastLight/README.md) | [`solve.py`](LastLight/solve.py) |
 
 ---
