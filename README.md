@@ -13,7 +13,7 @@ This repository contains the complete English write-ups and reproducible solver 
 | **Sherlock 04** | **PaperGhost** | USB Device Artifacts, SRUM/ESE Analysis, Windows Search Index Recovery | 9/9 flags answered | [Write-up](PaperGhost/README.md) | Not Applicable |
 | **Sherlock 05** | **PoisonedBranch** | Software Supply Chain, Linux Auditd, bkcrack Known-Plaintext | `HTB{P0150N3D_BR4NCH_N3V3R_D135}` | [Write-up](PoisonedBranch/README.md) | [`solve.py`](PoisonedBranch/solve.py) |
 | **Sherlock 06** | **SilentPassenger** | Android Automotive Forensics, MQTT, Reverse Engineering | 20/20 questions answered | [Write-up](SilentPassenger/README.md) | [`solve.py`](SilentPassenger/solve.py) |
-| **Sherlock 07** | **Iron Feather** | PX4 Firmware Reversing, Custom KDF/AES-GCM Cryptography, ULog Flight-Log Forensics, GPS/Geospatial Analysis | 17/17 flags answered | [Write-up](IronFeather/README.md) | [`solve.py`](IronFeather/solve.py) |
+| **Sherlock 07** | **Iron Feather** | PX4 Firmware Reversing, Custom KDF/AES-GCM Cryptography, ULog Flight-Log Forensics, GPS/Geospatial Analysis | 17/17 flags answered | [Write-up](IronFeather/README.md) | Not Applicable |
 | **Sherlock 09** | **LastLight / DIOGENES** | Active Directory Live Response, Memory Forensics, RBCD | `HTB{3v3n_Th3_F0g_Kn0ws_D10g3n3s}` | [Write-up](LastLight/README.md) | [`solve.py`](LastLight/solve.py) |
 
 ---
@@ -40,7 +40,11 @@ This repository contains the complete English write-ups and reproducible solver 
 - **Concept**: Forensic investigation of a compromised Android Automotive Head Unit (TOPWAY / Allwinner T3). Tracks a multi-stage backdoor chain delivered over retained MQTT topics into a privileged system app (`TWCore`), decrypting hidden DEX modules, C2 network traffic, and extracting relay GPS coordinates.
 - **Key Techniques**: Android priv-app analysis, APK/DEX deobfuscation, custom RSA/AES protocol reversing, binary packet framing & coordinate decryption.
 
-### 6. [Sherlock 09: LastLight / DIOGENES](LastLight/README.md)
+### 6. [Sherlock 07: Iron Feather](IronFeather/README.md)
+- **Concept**:A recovered PX4 flight controller binary and its two encrypted artifacts—an encrypted `dataman` mission storage file and an encrypted `.ulg` flight log—are protected by a custom `PX4DMENC` container based on AES-256-GCM; the container's key is regenerated at runtime via a bespoke 384-round mixing routine, the output of which serves as input for PBKDF2-HMAC-SHA256. Recovering the key and decrypting the files yields a 24-entry PX4 mission plan and the drone's complete "black box" flight record; the flight involved an in-transit payload drop, followed by a loss of control caused by a malicious `MAV_CMD_INJECT_FAILURE` MAVLink command, ultimately resulting in a crash near Knightsbridge, London.
+- **Key Techniques**: PX4 Firmware Reversing, Custom KDF/AES-GCM Cryptography, ULog Flight-Log Forensics, GPS/Geospatial Analysis.
+
+### 7. [Sherlock 09: LastLight / DIOGENES](LastLight/README.md)
 - **Concept**: Full intrusion reconstruction from a 3.2 GB Domain Controller memory dump, Sysmon/Security event logs, and an NTDS database. Traces a UPN-spoofing password reset, service implant deployment, token impersonation, Golden Ticket generation, and Resource-Based Constrained Delegation (RBCD) backdoor.
 - **Key Techniques**: Volatility 3 kernel object walking (`_TOKEN`, `_ETHREAD`), offline Kerberos ccache ticket carving & PAC decryption via `impacket`, NTDS.dit offline extraction via `dissect.esedb`.
 
