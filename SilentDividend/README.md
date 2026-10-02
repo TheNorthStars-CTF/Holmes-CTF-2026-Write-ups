@@ -478,7 +478,7 @@ Otherwise use the Python extractor from §2.2.
 cat asar_out/preload.js
 ```
 
-Q1 (`C:\Users\Public`), Q4 (`resolveState()`), and Q6 (`TEMP`) all fall out of a single read.
+Q1 (`C:\Users\Public`), Q4 (`resolveState()`), and Q6 (`%TEMP%`) all fall out of a single read.
 
 ### Step 4 — Run the Lua sandbox (Q2, Q3)
 
@@ -555,7 +555,7 @@ Compute the EIP-55 checksum to get `0xEBfC1eD96b1C6b940fb6B06359fF4A6776Df7a9A`,
 |Q3|HTTP exfiltration API|`WinHttpSendRequest`|
 |Q4|On-chain decryption key function|`resolveState()`|
 |Q5|Decrypted payload flag|`AUTH=NAPOLEON SETTLEMENT_REFERENCE=SR-4821`|
-|Q6|HTML drop environment variable|`TEMP`|
+|Q6|HTML drop environment variable|`%TEMP%`|
 |Q7|Token spending-permission function|`approve()`|
 |Q8|Approval amount|`115792089237316195423570985008687907853269984665640564039457584007913129639935`|
 |Q9|ethers.js v6 wallet provider class|`BrowserProvider`|
